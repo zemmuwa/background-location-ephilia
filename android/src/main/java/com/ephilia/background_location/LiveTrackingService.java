@@ -140,7 +140,7 @@ public class LiveTrackingService extends Service {
 
                         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
                         int defaultValue = 0;
-                        Sring defaultValue2 = "";
+                        String defaultValue2 = "";
                         final int highScore = sharedPref.getInt("UserID", defaultValue);
                         Log.d(TAG, "shared dpreferences : " + String.valueOf(highScore));
 
