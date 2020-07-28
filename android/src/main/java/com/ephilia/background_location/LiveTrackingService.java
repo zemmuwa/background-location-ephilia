@@ -40,7 +40,7 @@ public class LiveTrackingService extends Service {
     private LocationManager mLocationManager;
     private NotificationManager notificationManager;
 
-    private final int LOCATION_INTERVAL = 6000;
+    private final int LOCATION_INTERVAL = 1000;
     private final int LOCATION_DISTANCE = 0;
 
     @Override
