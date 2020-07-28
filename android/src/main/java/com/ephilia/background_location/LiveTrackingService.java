@@ -192,7 +192,7 @@ public class LiveTrackingService extends Service {
         Log.d(TAG, "Start Service");
 
         try {
-            mLocationManager.requestLocationUpdates( LocationManager.GPS_PROVIDER, 5000, LOCATION_DISTANCE, mLocationListener );
+            mLocationManager.requestLocationUpdates( LocationManager.GPS_PROVIDER, 1000, LOCATION_DISTANCE, mLocationListener );
 //                mLocationManager.requestSingleUpdate(LocationManager.GPS_PROVIDER, mLocationListener, null);
 
         } catch (java.lang.SecurityException ex) {
