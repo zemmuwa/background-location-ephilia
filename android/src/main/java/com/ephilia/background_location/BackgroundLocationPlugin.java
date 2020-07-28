@@ -61,6 +61,7 @@ public class BackgroundLocationPlugin extends FlutterActivity implements Flutter
       String userID = call.argument("URL");
       Log.d("Tes 123", userID);
       SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(mContext);;
+      
       SharedPreferences.Editor editor = sharedPref.edit();
       editor.putString("URL", userID);
       editor.commit();

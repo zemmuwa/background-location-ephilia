@@ -141,7 +141,8 @@ public class LiveTrackingService extends Service {
                         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
                         int defaultValue = 0;
                         String defaultValue2 = "";
-                        final int highScore = sharedPref.getInt("UserID", defaultValue);
+                        SharedPreferences prefs = getSharedPreferences("FlutterSharedPreferences", MODE_PRIVATE);
+                        final int highScore = prefs.getInt("flutter.UserID", defaultValue);
                         Log.d(TAG, "shared dpreferences : " + String.valueOf(highScore));
 
                         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
