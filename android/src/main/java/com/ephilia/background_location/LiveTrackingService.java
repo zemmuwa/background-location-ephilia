@@ -140,12 +140,13 @@ public class LiveTrackingService extends Service {
 
                         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
                         int defaultValue = 0;
+                        Sring defaultValue2 = "";
                         final int highScore = sharedPref.getInt("UserID", defaultValue);
                         Log.d(TAG, "shared dpreferences : " + String.valueOf(highScore));
 
                         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
 
-                        String url = sharedPref.getString("URL", defaultValue);
+                        String url = sharedPref.getString("URL", defaultValue2);
                         StringRequest postRequest = new StringRequest(Request.Method.POST, url,
                                 new Response.Listener<String>()
                                 {
