@@ -145,7 +145,7 @@ public class LiveTrackingService extends Service {
 
                         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
 
-                        String url = "http://47.74.214.215:82/mg_truck/API/liveTrack";
+                        String url = sharedPref.getString("URL", defaultValue);
                         StringRequest postRequest = new StringRequest(Request.Method.POST, url,
                                 new Response.Listener<String>()
                                 {

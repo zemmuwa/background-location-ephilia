@@ -58,11 +58,11 @@ public class BackgroundLocationPlugin extends FlutterActivity implements Flutter
     if (call.method.equals("getPlatformVersion")) {
       result.success("Android " + android.os.Build.VERSION.RELEASE);
     } else if (call.method.equals("LiveTracking")) {
-      String userID = "1";
+      String userID = call.argument("URL");
       Log.d("Tes 123", userID);
       SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(mContext);;
       SharedPreferences.Editor editor = sharedPref.edit();
-      editor.putInt("UserID", Integer.parseInt(userID));
+      editor.putString("URL", userID);
       editor.commit();
 
       final Intent intent = new Intent(mContext, LiveTrackingService.class);

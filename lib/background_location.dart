@@ -11,8 +11,8 @@ class BackgroundLocation {
     return version;
   }
 
-  static Future<String> LiveTracking() async {
-    final String version = await _channel.invokeMethod('LiveTracking');
+  static Future<String> LiveTracking(String url) async {
+    final String version = await _channel.invokeMethod('LiveTracking', {'URL' : url});
     return version;
   }
 }
