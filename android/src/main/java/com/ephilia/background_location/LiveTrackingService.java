@@ -89,7 +89,9 @@ public class LiveTrackingService extends Service {
     @Override
     public void onCreate() {
         Log.d(TAG, "onCreate");
-        startForeground(12345678, getNotification());
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            startForeground(12345678, getNotification());
+        }
     }
 
     @Override
@@ -183,7 +185,7 @@ public class LiveTrackingService extends Service {
             }
         };
 
-        mTimer1.schedule(mTt1, 3000, 3000);
+        mTimer1.schedule(mTt1, 300000, 300000);
     }
 
     public void startTracking() {
@@ -211,7 +213,7 @@ public class LiveTrackingService extends Service {
     private Notification getNotification() {
         startTracking();
         startTimer();
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel channel = new NotificationChannel("channel_01", "My Channel", NotificationManager.IMPORTANCE_DEFAULT);
 
             NotificationManager notificationManager = getSystemService(NotificationManager.class);
@@ -219,7 +221,8 @@ public class LiveTrackingService extends Service {
 
             Notification.Builder builder = new Notification.Builder(getApplicationContext(), "channel_01").setAutoCancel(true);
             return builder.build();
-//        }
+        }
+        return null;
     }
 
 
